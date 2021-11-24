@@ -1,14 +1,17 @@
 import React from "react";
 import "./App.css";
-import {BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { Router, Routes, Route } from "react-router-dom";
+
+// import Home from "./Home/Home";
+// import Chatroom from "./Chatroom/Chatroom";
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={}/>
-        <Route exact path="/:roomId" component={}/>
-      </Switch>
+      <Routes>
+        {/* <Route exact path="/" component={Home}/>
+        <Route exact path="/:roomId" component={Chatroom}/> */}
+      </Routes>
     </Router>
   );
 }
