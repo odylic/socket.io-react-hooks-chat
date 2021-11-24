@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Chatroom.css";
+
+import useChat from "../useChat";
 
 const Chatroom = (props) => {
   // const { roomId } = props.match.params;
-
+  // const { messages, sendMessage } = useChat(roomId);
 
   return (
     <div className="chat-room-container">
