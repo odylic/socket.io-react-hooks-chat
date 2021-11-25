@@ -10,6 +10,7 @@ const Chatroom = (props) => {
   const { messages, sendMessage } = useChat(roomId);
   const [newMessage, setNewMessage] = useState("");
 
+
   const handleNewMessageChange = (e) => {
     setNewMessage(e.target.value);
   };
@@ -23,21 +24,30 @@ const Chatroom = (props) => {
     <div className="chat-room-container">
       <h1 className="room-name">Room: {roomId}</h1>
       <div className="messages-container">
+        test
         <ol className="messages-list">
-          {messages.map((message, i) => {
+          {messages.map((message, i) => (
             <li
               key={i}
-              // will show the css conditionally for my-message or received message
               className={`message-item ${
                 message.ownedByCurrentUser ? "my-message" : "received-message"
               }`}
             >
+              test
               {message.body}
-            </li>;
-          })}
+            </li>
+          ))}
         </ol>
       </div>
-      
+      <textarea
+        value={newMessage}
+        onChange={handleNewMessageChange}
+        placeholder="Write message..."
+        className="new-message-input-field"
+      />
+      <button onClick={handleSendMessage} className="send-message-button">
+        Send
+      </button>
     </div>
   );
 };
