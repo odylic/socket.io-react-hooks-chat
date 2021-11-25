@@ -10,7 +10,6 @@ const Chatroom = (props) => {
   const { messages, sendMessage } = useChat(roomId);
   const [newMessage, setNewMessage] = useState("");
 
-
   const handleNewMessageChange = (e) => {
     setNewMessage(e.target.value);
   };
@@ -24,7 +23,6 @@ const Chatroom = (props) => {
     <div className="chat-room-container">
       <h1 className="room-name">Room: {roomId}</h1>
       <div className="messages-container">
-        test
         <ol className="messages-list">
           {messages.map((message, i) => (
             <li
@@ -33,7 +31,6 @@ const Chatroom = (props) => {
                 message.ownedByCurrentUser ? "my-message" : "received-message"
               }`}
             >
-              test
               {message.body}
             </li>
           ))}
